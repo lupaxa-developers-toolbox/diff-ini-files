@@ -51,8 +51,6 @@ jobs:
     secrets: inherit
     with:
       python-versions: '["3.10", "3.11", "3.12", "3.13", "3.14"]'
-      install-target: install-dev
-      ci-target: check
 
   generate-workflow-summary:
     name: Generate Workflow Summary
