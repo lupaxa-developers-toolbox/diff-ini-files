@@ -60,7 +60,7 @@ def parse(text: str, *, source: str, ignore_case: bool = False) -> IniDocument:
             found.header_seen = True
             found.name = name
             return found
-        fail(f"duplicate section [{name}] at line {lineno}")
+        raise ParseError(f"unable to parse {source!r}: duplicate section [{name}] at line {lineno}")
 
     for index, line in enumerate(normalized.split("\n")):
         lineno = index + 1
